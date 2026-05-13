@@ -67,3 +67,16 @@ Test HTTP Response:
 time curl -I http://192.168.56.102
 
 time curl -I --max-time 10 http://192.168.56.102
+---
+
+
+# Monitoring Results
+Before Attack
+CPU idle approximately 92%
+Minimal network activity
+Fast HTTP response
+During Attack
+CPU usage increased significantly
+Large SYN packet flood detected
+HTTP response became slow
+Multiple half-open connections created
